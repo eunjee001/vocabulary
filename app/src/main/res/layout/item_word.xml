@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="단어"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/meanTextView"
+        app:layout_constraintTop_toBottomOf="@id/textTextView"
+        android:text="뜻"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@id/textTextView"/>
+    
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="품사"
+        android:id="@+id/chip"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
