@@ -19,17 +19,20 @@ class MainActivity : AppCompatActivity(), WordAdapter.ItemClickListener {
 
         initRecyclerView()
         binding.addButton.setOnClickListener {
-            Intent(this, AddActivity::class.java).let {
-                startActivity(it)
-            }
+            startActivity(Intent(this, AddActivity::class.java))
         }
     }
+
     private fun initRecyclerView(){
-        val dummyList = mutableListOf(Word("weather", "날씨", "명사"), Word("night", "밤", "명사"), Word("home", "집", "명사"), Word("move", "움직이다.", "동사"))
-        wordAdapter = WordAdapter(dummyList, this)
+        wordAdapter = WordAdapter(mutableListOf(), this)
         binding.wordRecyclerView.apply {
             adapter = wordAdapter
             layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
+
+            /**
+             * ItemDecoration을 사용하면 애플리케이션이 어댑터 데이터 세트의 특정 항목 보기에 특수 도면 및 레이아웃 오프셋을 추가할 수 있습니다.
+             * 이는 항목, 하이라이트, 시각적 그룹 경계 등 사이에 구분 선을 그리는 데 유용할 수 있습니다.
+             */
             val dividerItemDecoration = DividerItemDecoration(applicationContext, LinearLayoutManager.VERTICAL)
             addItemDecoration(dividerItemDecoration)
 

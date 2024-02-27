@@ -22,4 +22,6 @@ Kotlin
 Android
 - Room
 - registerForActivityResult
-- Parcelize
+- Parcelize  
+## Room
+상당한 양의 데이터가 있을 때, 사용
