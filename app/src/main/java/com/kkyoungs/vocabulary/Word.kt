@@ -1,8 +1,11 @@
 package com.kkyoungs.vocabulary
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity(tableName = "word")
 data class Word(
     val text : String,
@@ -11,4 +14,4 @@ data class Word(
 
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
-)
+):Parcelable
