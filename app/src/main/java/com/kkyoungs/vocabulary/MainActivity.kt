@@ -119,7 +119,12 @@ class MainActivity : AppCompatActivity(), WordAdapter.ItemClickListener {
     private fun updateEditWord(word:Word){
        val index = wordAdapter.list.indexOfFirst {it.id == word.id}
             wordAdapter.list[index] = word
-        runOnUiThread { wordAdapter.notifyDataSetChanged() }
+        runOnUiThread {
+            selectWord = word
+            wordAdapter.notifyItemChanged(index)
+            binding.textTextView.text = word.text
+            binding.meanTextView.text = word.mean
+        }
 
     }
     override fun onClick(word: Word) {
