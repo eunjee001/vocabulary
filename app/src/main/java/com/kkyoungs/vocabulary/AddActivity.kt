@@ -91,7 +91,7 @@ class AddActivity : AppCompatActivity() {
             editWord?.let {
                 AppDatabase.getInstance(this)?.wordDao()?.update(editWord)
                 val intent = Intent().putExtra("editWord", editWord)
-                setResult(RESULT_OK)
+                setResult(RESULT_OK, intent)
                 runOnUiThread {Toast.makeText(this, "수정을 완료했습니다.", Toast.LENGTH_SHORT).show()}
                 finish()
             }
